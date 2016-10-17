@@ -1,9 +1,18 @@
 package com.yywhisk.test.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Created by Administrator on 2016/10/16.
  */
+@Entity
+@Table(name = "Demo")
 public class Demo {
+    @Id
+    @GeneratedValue
     private long id;//主键.
     private String name;//测试名称.
     public long getId() {
