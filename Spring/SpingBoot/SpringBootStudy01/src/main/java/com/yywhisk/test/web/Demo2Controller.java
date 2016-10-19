@@ -15,12 +15,21 @@ import javax.annotation.Resource;
 public class Demo2Controller {
     @Resource
     private DemoService demoService;
-    /** * 测试保存数据方法. * @return */
+
+    /**
+     * 测试保存数据方法. * @return
+     */
     @RequestMapping("/save")
-    public String save(){
+    public String save() {
         Demo d = new Demo();
         d.setName("Angel");
         demoService.save(d);//保存数据.
-         return"ok.Demo2Controller.save";
+        return "ok.Demo2Controller.save";
+    }
+
+    //地址：http://127.0.0.1:8080/demo2/getById?id=1
+    @RequestMapping("/getById")
+    public Demo getById(long id) {
+        return demoService.getById(id);
     }
 }
